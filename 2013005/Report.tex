@@ -13,13 +13,29 @@
 また、観測した波形から電気回路の中で起こった力学的現象について観察し、
 減衰振動の周波数やピーク電圧などと時間の関係について考察する。
 \section{原理}
-直列に抵抗のみをつないだ回路における電流$I(t)$や電圧$V_{R}(t)$は、
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{R.eps}
+\caption{Rのみの回路}
+\label{R}
+\end{center}
+\end{figure}
+\Figref{R}のような、直列に抵抗のみをつないだ回路における電流$I(t)$や電圧$V_{R}(t)$は、
 Ohmの法則により\Equref{Ronly}で表される。
 \begin{eqnarray}
 \label{Ronly}
 V_{R}(t)=RI(t)
 \end{eqnarray}
-コンデンサが直流電源で充電されている場合を考える。コンデンサの静電容量をCとすると、
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{C.eps}
+\caption{Cのみの回路}
+\label{C}
+\end{center}
+\end{figure}
+
+コンデンサが直流電源で充電されている場合を考える(\Figref{C})。コンデンサの静電容量をCとすると、
 コンデンサに蓄えられている電荷$q(t)$と両端電圧$V_{C}(t)$との関係は\Equref{Conly}で表される
 \begin{eqnarray}
 \label{Conly}
@@ -30,13 +46,31 @@ q(t)=CV_{C}(t)
 I(t)=\frac{dq(t)}{dt}
 \end{eqnarray}
 となる。
-コイルは時間変化する電流に対して誘導起電力を生じる。コイルの自己インダクタンスL、ある時間tにおけるコイルへの流入電流を$I(t)$とすると、
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{L.eps}
+\caption{Lのみの回路}
+\label{L}
+\end{center}
+\end{figure}
+
+\Figref{L}のような回路において、コイルは時間変化する電流に対して誘導起電力を生じる。コイルの自己インダクタンスL、ある時間tにおけるコイルへの流入電流を$I(t)$とすると、
 誘導起電力$V_{L}(t)$は\Equref{Lind}で表される。
 \begin{eqnarray}
 \label{Lind}
 V_{L}(t)=-L\frac{dI(t)}{dt}
 \end{eqnarray}
-次に、抵抗、コイル、コンデンサを直列につないだ回路に直流電源を接続した場合に回路に流れる電流について考える。
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5cm]{RLC.eps}
+\caption{RLC回路}
+\label{RLC}
+\end{center}
+\end{figure}
+
+次に、抵抗、コイル、コンデンサを直列につないだ回路(\Figref{RLC})に直流電源を接続した場合に回路に流れる電流について考える。
 電源の起電力をVとし、ある時刻tにおいて、コンデンサに蓄えられている電荷$q(t)$、抵抗値、インダクタンスと静電容量をそれぞれR、L、C、とすると、
 回路に流れる電流$I(t)$は\Equref{RLC:1}を満たす。
 \begin{eqnarray}
@@ -128,28 +162,29 @@ Function Generator & IWATSU & SFG-2004 & EK892481 \\ \hline
 これより計算したコンデンサの静電容量の値は$C=8.092\times10^{-9}[\mathrm C]$,これにもっとも近い値として
 $10\times10^{-9}[\mathrm C]$のものを使用した。
 
-減衰振動の実験のデータは表(2)、波形は図(1)となった。
+減衰振動の実験のデータは表(2)、波形は\Figref{Gensui}となった。減衰振動では、抵抗は$219.3\mathrm \Ohm]$のものを使用した
 \begin{figure}[h]
 \begin{center}
+\includegraphics[width=10cm]{freq.eps}
 \label{Gensui}
-\includegraphics[width=5cm]{freq.eps}
 \caption{減衰振動の波形}
 \end{center}
 \end{figure}
 \begin{table}[h]
 \begin{center}
+\label{GensuiD}
 \caption{減衰振動における測定データ}
 \begin{tabular}{|l|r|r|r|}
 \hline
 回数 & 時間$t_{1}[\mu \mathrm s]$ & 電圧$V_{i}[\mathrm V]$ & 電圧比の対数 \\ \hline \hline
 1 & 76 & 2.76 & None \\ \hline
-2 & 220 & 2.16 & -0.106 \\ \hline
-3 & 368 & 1.68 & -0.109 \\ \hline
-4 & 514 & 1.36 & -0.092 \\ \hline
-5 & 656 & 1.04 & -0.116 \\ \hline
-6 & 800 & 0.840 & -0.093 \\ \hline
-7 & 944 & 0.640 & -0.118 \\ \hline
-8 & 1090 & 0.400 & -0.204 \\ \hline
+2 & 220 & 2.16 & -0.245 \\ \hline
+3 & 368 & 1.68 & -0.496 \\ \hline
+4 & 514 & 1.36 & -0.708 \\ \hline
+5 & 656 & 1.04 & -0.976 \\ \hline
+6 & 800 & 0.840 & -1.18 \\ \hline
+7 & 944 & 0.640 & -1.46 \\ \hline
+8 & 1090 & 0.400 &-1.93 \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
@@ -163,7 +198,7 @@ $10\times10^{-9}[\mathrm C]$のものを使用した。
 過減衰のグラフは図(3)、データは表(3)となっている。
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=5cm]{over.eps}
+\includegraphics[width=10cm]{over.eps}
 \caption{過減衰の波形}
 \end{center}
 \end{figure}
@@ -174,21 +209,17 @@ $10\times10^{-9}[\mathrm C]$のものを使用した。
 \hline
 n[DIV]&$V_{i}[\mathrm V]$&電圧の対数値 \\ \hline \hline
 1&58.8&None \\ \hline
-2&38.8&-0.18 \\ \hline
-3&14.0&-0.44 \\ \hline
-4&8.8&0.20 \\ \hline
-5&5.6&0.20  \\ \hline
-6&3.6&0.19  \\ \hline
-7&3.2&0.05  \\ \hline
-8&1.2&0.43  \\ \hline
+2&38.8&-0.416 \\ \hline
+3&14.0&-1.43 \\ \hline
+4&8.8&-1.90 \\ \hline
+5&5.6&-2.35  \\ \hline
+6&3.6&-2.79  \\ \hline
+7&3.2&-2.91  \\ \hline
+8&1.2&-3.89  \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
+
 \section{考察}
-原理式より、抵抗値を増加させることによって、$\gamma$の値が増加するため、
-I(t)が減少することがわかる。減衰振動においては、図(2)からも読み取れるように、
-ほぼ一定のペースで電圧ピーク値が減少していることがわかる。
-抵抗値が増加するごとに、一回振動するごとの電圧減少率が上昇していることがグラフ、理論式の
-両方から読み取ることができる。
 \end{document}
 
